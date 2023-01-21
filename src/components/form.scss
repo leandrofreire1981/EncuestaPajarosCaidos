@@ -1,0 +1,57 @@
+.form{
+    background-color: #434a57;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
+    padding: 20px;
+    align-self: center;
+    justify-content: center;
+ }
+
+.input {
+    height: 30px;
+    width: 200px;
+    margin-top: 5px;
+    background-color: rgb(38, 48, 61);
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.select {
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+    background-color: rgb(38, 48, 61);
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+    
+}
+
+.submit {
+
+    height: 30px;
+    width: 70px;
+    background-color: rgb(38, 48, 61);
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: 500ms; 
+    margin: 30px;
+}
+
+.submit:hover{
+    transform: scale(1.2);
+}
+.option{
+
+}
