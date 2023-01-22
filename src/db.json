@@ -1,0 +1,98 @@
+{
+	"items": [
+		{
+			"type": "text",
+			"label": "Nombre completo",
+			"name": "full_name",
+			"required": true,
+			"bigText": false
+		},
+		{
+			"type": "email",
+			"label": "Correo electrónico",
+			"name": "email",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "tel",
+			"label": "Celular",
+			"name": "celular",
+			"required": true,
+			"bigText": false
+		},
+		{
+			"type": "url",
+			"label": "Usuario de instagram o facebook",
+			"name": "user",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "text",
+			"label": "¿Qué ave rescataste?",
+			"name": "rescate",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "text",
+			"label": "¿Cómo fue tu experiencia?",
+			"name": "exp",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "checkbox",
+			"label": "¿La información fue precisa y clara?",
+			"options": [{"label": "si"}, {"label": "no"}],
+			"name": "info",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "checkbox",
+			"label": "¿La orientación resolvió tu consutla principal?",
+			"options": [{"label": "si"}, {"label": "no"} ],
+			"name": "cons",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "checkbox",
+			"label": "¿Cómo fue la atención del voluntariado a tus dudas?",
+			"options": [{"label": "Excelente"}, {"label": "Buena"}, {"label": "Mala"} ],
+			"name": "aten",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "checkbox",
+			"label": "Dictamos un curso de primeros auxilios en aves. ¿Te interesaría participar?",
+			"options": [{"label": "si"}, {"label": "no"}, {"label": "Tal vez"} ],
+			"name": "curso",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "checkbox",
+			"label": "Dictamos un curso de voluntariado online y de tránsito de nuestra ONG. ¿Te interesaría participar?",
+			"options": [{"label": "si"}, {"label": "no"}, {"label": "Tal vez"} ],
+			"name": "curso2",
+			"required": true,
+			"bigText": false
+		},
+        {
+			"type": "text",
+			"label": "Espacio para sugerencias",
+			"name": "sugerencias",
+			"required": false,
+			"bigText": true
+		},
+		{
+			"type": "submit",
+			"label": "Enviar",
+			"bigText": false
+		}
+	]
+}

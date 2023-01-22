@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import db from '../db1.json'
-import { getData } from '../redux/action'
+import saveDv from '../controllers/saveDb'
+import db from '../db.json'
+import { getData } from '../redux/actions'
 import './form.scss'
-import { SaveDb } from './SaveDb'
-
 
 
 export default function Form() {
+    console.log('form', db.items[0].style)
    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [ input, setInput ] = useState()
@@ -17,24 +17,21 @@ export default function Form() {
     function handleOnSubmit(e){
         e.preventDefault()
         for (let i = 0; i < db.items.length - 1; i++) {
-            if(db.items[i].type !== 'submit' && db.items[i].required && input && input[db.items[i].name]){
+            if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
                 console.log('cooorrecto', input[db.items[i].name])
                 continue
             }
-            if(db.items[i].type !== 'submit' && db.items[i].required && input && input[db.items[i].name] === 'on')
+            if(db.items[i].type !== 'submit' && input && input[db.items[i].name] === 'on')
                 console.log('cooorrecto', db.items[i].name)
-            else {
+            if(db.items[i].required && !input[db.items[i].name]){
                 errorRef.current.innerHTML = `Faltan ingresar ${db.items[i].label}`
                 return
             }
         }
         console.log('enviando a Database', input) 
-        SaveDb({
-            full_name: input.full_name,
-            email: input.email,
-            birth_date: input.birth_date,
-            country_of_origin: input.country_of_origin
-        }) 
+        saveDv(input) 
+        console.log('env ', process.env.REACT_APP_appId)
+
         dispatch(getData())
         navigate("/showdb")
  
@@ -44,7 +41,7 @@ export default function Form() {
         let aux = []
          if(e.target.type === 'text'){
             if(!/[a-zA-ZñÑ´' ]+/gi.test(e.target.value.charAt(e.target.value.length - 1)))
-                errorRef.current.innerHTML = 'Solo se permiten letras y numeros'
+                errorRef.current.innerHTML = 'Solo se permiten letras'
             else    
                 errorRef.current.innerHTML = ''
             e.target.value = e.target.value.match(/[a-zA-ZñÑ´' ]+/gi)
@@ -69,7 +66,7 @@ export default function Form() {
     }
 
   return (
-    <form onSubmit={handleOnSubmit} className="form">
+    <form onSubmit={handleOnSubmit} className="form" >
         <h2>Encuesta</h2>
         {db.items.map((r, i) => {
             if(r.type === 'submit')
@@ -86,7 +83,7 @@ export default function Form() {
                     <div key = {i + 'a'}>
                         <label>{r.label}</label>
                         <select onChange={handleOnSelect} name={r.name} className='select' >
-                            <option value='Seleccione un pais'>Seleccione un pais</option>
+                            <option value={r.label}>{r.label}</option>
                             {
                                 r.options.map((r2, i) => 
                                     <option key={i} value={r2.value} className='option'>{r2.label}</option>
@@ -95,11 +92,26 @@ export default function Form() {
                         </select>
                     </div>
                 )
+            if(r.type === 'checkbox')
+                return(
+                    <div key={i + 'b'}>
+                        <label>{r.label} </label>
+                        <br></br>
+                        {
+                            r.options?.map(o => (
+                            <>
+                                <label>{o.label}</label>
+                                <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400} : {}} className='checkbox' />
+                            </>
+                            )) 
+                        }
+                    </div>   
+                )
             else
                 return (
-                    <div key={i}>
+                    <div key={i + 'c'}>
                         <label>{r.label} </label>
-                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]} className='input' />
+                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400} : {}} className='input' />
                         <div ref={errorRef} ></div>
                     </div>
                     )

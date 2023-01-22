@@ -9,8 +9,22 @@
 
 .input {
     height: 30px;
-    width: 200px;
-    margin-top: 5px;
+    width: 250px;
+    margin-top: 10px;
+    background-color: rgb(38, 48, 61);
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.checkbox{
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-right: 35px;
     background-color: rgb(38, 48, 61);
     border-radius: 5px;
     font-size: 15px;
