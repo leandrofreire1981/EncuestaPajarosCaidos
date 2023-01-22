@@ -95,7 +95,7 @@ export default function Form() {
             if(r.type === 'checkbox')
                 return(
                     <div key={i + 'b'}>
-                        <label>{r.label} </label>
+                        <label className='label'>{r.label} </label>
                         <br></br>
                         {
                             r.options?.map(o => (
