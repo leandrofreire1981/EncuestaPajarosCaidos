@@ -111,7 +111,8 @@ export default function Form() {
                 return (
                     <div key={i + 'c'}>
                         <label className='label'>{r.label} </label>
-                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400, marginLeft: 20} : {}} className='input' />
+                        <br></br>
+                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width: 380} : {}} className='input' />
                         <div ref={errorRef} ></div>
                     </div>
                     )
