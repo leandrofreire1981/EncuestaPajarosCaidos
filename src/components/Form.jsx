@@ -81,7 +81,7 @@ export default function Form() {
             if(r.type === 'select')
                 return(
                     <div key = {i + 'a'}>
-                        <label>{r.label}</label>
+                        <label className='label'>{r.label}</label>
                         <select onChange={handleOnSelect} name={r.name} className='select' >
                             <option value={r.label}>{r.label}</option>
                             {
@@ -110,8 +110,8 @@ export default function Form() {
             else
                 return (
                     <div key={i + 'c'}>
-                        <label>{r.label} </label>
-                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400} : {}} className='input' />
+                        <label className='label'>{r.label} </label>
+                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400, marginLeft: 20} : {}} className='input' />
                         <div ref={errorRef} ></div>
                     </div>
                     )
