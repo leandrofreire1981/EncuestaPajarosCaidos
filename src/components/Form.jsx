@@ -100,7 +100,7 @@ export default function Form() {
                         {
                             r.options?.map(o => (
                             <>
-                                <label>{o.label}</label>
+                                <label className='labelCheckbox'>{o.label}</label>
                                 <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400} : {}} className='checkbox' />
                             </>
                             )) 

@@ -6,7 +6,7 @@
     align-self: center;
     justify-content: center;
     width: 80%;
-    max-width: 1000px;
+    max-width: 400px;
  }
 
  .label{
@@ -32,8 +32,8 @@
 }
 
 .checkbox{
-    height: 30px;
-    width: 30px;
+    height: 17px;
+    width: 25px;
     margin-top: 10px;
     margin-right: 35px;
     background-color: rgb(38, 48, 61);
@@ -79,13 +79,17 @@
 .submit:hover{
     transform: scale(1.2);
 }
+
+.labelCheckbox{
+    font-size: 20px;
+}
 .option{
 
 }
 
 @media screen and (min-width: 800px) {
     .form{
-    
+ 
     }
     
 }
