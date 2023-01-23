@@ -38,7 +38,7 @@ export default function Form() {
     }
 
     function handleOnChange(e){
-        let aux = []
+/*         let aux = []
          if(e.target.type === 'text'){
             if(!/[a-zA-ZñÑ´' ]+/gi.test(e.target.value.charAt(e.target.value.length - 1)))
                 errorRef.current.innerHTML = 'Solo se permiten letras'
@@ -49,7 +49,7 @@ export default function Form() {
             aux.push(e.target.value)
             aux.flat()
             e.target.value=aux[0].slice(0,50)
-        } 
+        }  */
         if( e.target.type === 'checkbox')
             setInput({...input, [e.target.name]: e.target.checked})
         else
@@ -108,14 +108,23 @@ export default function Form() {
                     </div>   
                 )
             else
-                return (
-                    <div key={i + 'c'}>
+                if(r.bigText)
+                        return (
+                            <div key={i + 'c'}>
                         <label className='label'>{r.label} </label>
                         <br></br>
-                        <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100} : {}} className='input' />
+                        <textarea name={r.name} onChange={handleOnChange} value={input && input[r.name]} className='textArea' />
                         <div ref={errorRef} ></div>
                     </div>
-                    )
+                        )
+            return (
+                <div key={i + 'c'}>
+                    <label className='label'>{r.label} </label>
+                    <br></br>
+                    <input type='text' name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100} : {}} className='input' />
+                    <div ref={errorRef} ></div>
+                </div>
+                )
         }
         )}
     </form>
