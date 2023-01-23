@@ -10,12 +10,14 @@
  }
 
  .label{
-
+    padding-left: 2%;
+    padding-right: 2%;
+    box-sizing: border-box;
  }
 
 .input {
     height: 4vh;
-    width: 30%;
+    width: 70%;
     margin-top: 10px;
     background-color: rgb(38, 48, 61);
     border-radius: 5px;
@@ -83,7 +85,7 @@
 
 @media screen and (min-width: 800px) {
     .form{
-        background-color: aqua;
+    
     }
     
 }
