@@ -8,11 +8,13 @@ import './form.scss'
 
 
 export default function Form() {
-    console.log('form', db.items[0].style)
-   const navigate = useNavigate()
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [ input, setInput ] = useState()
+    const [ input, setInput ] = useState({
+
+    })
     const errorRef = useRef(null);
+    const checkRef = useRef()
 
     function handleOnSubmit(e){
         e.preventDefault()
@@ -27,13 +29,12 @@ export default function Form() {
                 errorRef.current.innerHTML = `Faltan ingresar ${db.items[i].label}`
                 return
             }
-        }
+        } 
         console.log('enviando a Database', input) 
         saveDv(input) 
-        console.log('env ', process.env.REACT_APP_appId)
 
         dispatch(getData())
-        navigate("/showdb")
+        navigate("/showdb") 
  
     }
 
@@ -50,10 +51,18 @@ export default function Form() {
             aux.flat()
             e.target.value=aux[0].slice(0,50)
         }  */
-        if( e.target.type === 'checkbox')
-            setInput({...input, [e.target.name]: e.target.checked})
+        if( e.target.type === 'checkbox'){
+            let resp = ''
+            setInput({...input, [e.target.name]: e.target.value})
+            for (let i = 0; i < e.target.form.length; i++) {
+                if(e.target.name===e.target.form[i].name && e.target.id!==e.target.form[i].id)
+                    if(e.target.form[i].checked)
+                        e.target.form[i].checked = false
+            }
+        }
         else
             setInput({...input, [e.target.name]: e.target.value})
+        
     }
 
     function handleOnSelect(e){
@@ -98,10 +107,10 @@ export default function Form() {
                         <label className='label'>{r.label} </label>
                         <br></br>
                         {
-                            r.options?.map(o => (
+                            r.options?.map((o, i) => (
                             <>
-                                <label className='labelCheckbox'>{o.label}</label>
-                                <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100, width:400} : {}} className='checkbox' />
+                                <label ref={checkRef} className='labelCheckbox'>{o.label}</label>
+                                <input type={r.type} id={i} name={o.name} onChange={handleOnChange} value={o.label}  style={r.bigText? {height: 100, width:400} : {}} className='checkbox' />
                             </>
                             )) 
                         }
