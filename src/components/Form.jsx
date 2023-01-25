@@ -19,22 +19,22 @@ export default function Form() {
     function handleOnSubmit(e){
         e.preventDefault()
         for (let i = 0; i < db.items.length - 1; i++) {
-            if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
+/*             if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
                 console.log('cooorrecto', input[db.items[i].name])
                 continue
             }
             if(db.items[i].type !== 'submit' && input && input[db.items[i].name] === 'on')
-                console.log('cooorrecto', db.items[i].name)
-            if(db.items[i].required && !input[db.items[i].name]){
+                console.log('cooorrecto', db.items[i].name) */
+             if(db.items[i].required && !input[db.items[i].name]){
                 errorRef.current.innerHTML = `Faltan ingresar ${db.items[i].label}`
                 return
-            }
-        } 
+            } 
+        }  
         console.log('enviando a Database', input) 
-        saveDv(input) 
+        //saveDv(input) 
 
-        dispatch(getData())
-        navigate("/showdb") 
+  /*       dispatch(getData())
+        navigate("/showdb")  */
  
     }
 
@@ -53,11 +53,15 @@ export default function Form() {
         }  */
         if( e.target.type === 'checkbox'){
             let resp = ''
-            setInput({...input, [e.target.name]: e.target.value})
+            if(e.target.value===input[e.target.name])
+                setInput({...input, [e.target.name]: ""})
+            else
+                setInput({...input, [e.target.name]: e.target.value})
             for (let i = 0; i < e.target.form.length; i++) {
                 if(e.target.name===e.target.form[i].name && e.target.id!==e.target.form[i].id)
-                    if(e.target.form[i].checked)
+                    if(e.target.form[i].checked){
                         e.target.form[i].checked = false
+                    }
             }
         }
         else

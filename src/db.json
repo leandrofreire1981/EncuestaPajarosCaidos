@@ -54,7 +54,7 @@
 			"type": "checkbox",
 			"label": "¿La orientación resolvió tu consutla principal?",
 			"options": [{"label": "si", "name": "orientacion"}, {"label": "no", "name": "orientacion"} ],
-			"name": "cons",
+			"name": "orientacion",
 			"required": true,
 			"bigText": false
 		},
@@ -62,7 +62,7 @@
 			"type": "checkbox",
 			"label": "¿Cómo fue la atención del voluntariado a tus dudas?",
 			"options": [{"label": "Excelente", "name": "atencion"}, {"label": "Buena", "name": "atencion"}, {"label": "Mala", "name": "atencion"} ],
-			"name": "aten",
+			"name": "atencion",
 			"required": true,
 			"bigText": false
 		},
@@ -70,7 +70,7 @@
 			"type": "checkbox",
 			"label": "Dictamos un curso de primeros auxilios en aves. ¿Te interesaría participar?",
 			"options": [{"label": "si", "name": "auxilios"}, {"label": "no", "name": "auxilios"}, {"label": "Tal vez", "name": "auxilios"} ],
-			"name": "curso",
+			"name": "auxilios",
 			"required": true,
 			"bigText": false
 		},
@@ -78,7 +78,7 @@
 			"type": "checkbox",
 			"label": "Dictamos un curso de voluntariado online y de tránsito de nuestra ONG. ¿Te interesaría participar?",
 			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}, {"label": "Tal vez", "name": "volunt"} ],
-			"name": "curso2",
+			"name": "volunt",
 			"required": true,
 			"bigText": false
 		},
