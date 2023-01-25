@@ -19,22 +19,22 @@ export default function Form() {
     function handleOnSubmit(e){
         e.preventDefault()
         for (let i = 0; i < db.items.length - 1; i++) {
-/*             if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
+             if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
                 console.log('cooorrecto', input[db.items[i].name])
                 continue
             }
             if(db.items[i].type !== 'submit' && input && input[db.items[i].name] === 'on')
-                console.log('cooorrecto', db.items[i].name) */
+                console.log('cooorrecto', db.items[i].name) 
              if(db.items[i].required && !input[db.items[i].name]){
                 errorRef.current.innerHTML = `Faltan ingresar ${db.items[i].label}`
                 return
             } 
         }  
         console.log('enviando a Database', input) 
-        //saveDv(input) 
+        saveDv(input) 
 
-  /*       dispatch(getData())
-        navigate("/showdb")  */
+        dispatch(getData())
+        navigate("/showdb")  
  
     }
 
@@ -134,7 +134,7 @@ export default function Form() {
                 <div key={i + 'c'}>
                     <label className='label'>{r.label} </label>
                     <br></br>
-                    <input type='text' name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100} : {}} className='input' />
+                    <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100} : {}} className='input' />
                     <div ref={errorRef} ></div>
                 </div>
                 )

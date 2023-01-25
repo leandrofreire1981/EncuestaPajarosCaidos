@@ -13,15 +13,15 @@ export const ShowDb = () => {
   }
     return (
       <div>
-        <h1>Ingresos en la base de datos</h1>
+        <h1>Muchas gracias por responder</h1>
       {data.length>0 && data.map((r, i) => (
         <div key={i}>
-          <div>Nombre: {r.full_name} </div>
-          <div>E-mail: {r.email} </div>
+          <div> </div>
+          <div></div>
           <hr></hr>
         </div>
       ))}
-      <button className='button' onClick={handleOnClick}>Volver</button> 
+     {/*  <button className='button' onClick={handleOnClick}>Volver</button>  */}
     
         
       </div>
