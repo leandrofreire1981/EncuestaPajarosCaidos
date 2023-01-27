@@ -14,13 +14,14 @@ export const ShowDb = () => {
     return (
       <div>
         <h1>Muchas gracias por responder</h1>
-      {data.length>0 && data.map((r, i) => (
+        <hr></hr>
+{/*       {data.length>0 && data.map((r, i) => (
         <div key={i}>
           <div> </div>
           <div></div>
           <hr></hr>
         </div>
-      ))}
+      ))} */}
      {/*  <button className='button' onClick={handleOnClick}>Volver</button>  */}
     
         

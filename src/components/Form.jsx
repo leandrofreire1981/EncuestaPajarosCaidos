@@ -86,7 +86,7 @@ export default function Form() {
                 return (
                     <div key={i}>
                         <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]} className='submit' />
-                        <input className='submit' type='button' value='Datos' onClick={handleOnButton} />
+                        {/* <input className='submit' type='button' value='Datos' onClick={handleOnButton} /> */}
                         <div ref={errorRef} ></div>
                     </div>
                 )
