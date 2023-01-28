@@ -42,9 +42,17 @@
 			"required": true,
 			"bigText": false
 		},
+		{
+			"type": "checkbox",
+			"label": "¿Sobrevivió el ave?",
+			"options": [{"label": "si", "name": "info"}, {"label": "no", "name": "info"}],
+			"name": "sobrevivio",
+			"required": true,
+			"bigText": false
+		},
         {
 			"type": "checkbox",
-			"label": "¿La información fue precisa y clara?",
+			"label": "¿La información fue clara?",
 			"options": [{"label": "si", "name": "info"}, {"label": "no", "name": "info"}],
 			"name": "info",
 			"required": true,
