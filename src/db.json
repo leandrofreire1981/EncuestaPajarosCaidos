@@ -52,7 +52,7 @@
 		},
         {
 			"type": "checkbox",
-			"label": "¿La orientación resolvió tu consutla principal?",
+			"label": "¿La orientación resolvió tu consulta principal?",
 			"options": [{"label": "si", "name": "orientacion"}, {"label": "no", "name": "orientacion"} ],
 			"name": "orientacion",
 			"required": true,
