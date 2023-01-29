@@ -45,7 +45,7 @@
 		{
 			"type": "checkbox",
 			"label": "¿Sobrevivió el ave?",
-			"options": [{"label": "si", "name": "info"}, {"label": "no", "name": "info"}],
+			"options": [{"label": "si", "name": "sobrevivio"}, {"label": "no", "name": "sobrevivio"}],
 			"name": "sobrevivio",
 			"required": true,
 			"bigText": false

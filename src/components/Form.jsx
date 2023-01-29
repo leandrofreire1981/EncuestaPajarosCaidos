@@ -52,6 +52,7 @@ export default function Form() {
             e.target.value=aux[0].slice(0,50)
         }  */
         if( e.target.type === 'checkbox'){
+            console.log('form: ', e.target.checked, e.target.name)
             if(e.target.value===input[e.target.name])
                 setInput({...input, [e.target.name]: ""})
             else
