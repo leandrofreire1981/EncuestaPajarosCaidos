@@ -52,7 +52,6 @@ export default function Form() {
             e.target.value=aux[0].slice(0,50)
         }  */
         if( e.target.type === 'checkbox'){
-            let resp = ''
             if(e.target.value===input[e.target.name])
                 setInput({...input, [e.target.name]: ""})
             else
