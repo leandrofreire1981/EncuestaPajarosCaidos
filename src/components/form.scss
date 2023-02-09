@@ -122,7 +122,11 @@
 
 @media screen and (min-width: 800px) {
     .form{
- 
+        padding: 20px;
+        align-self: center;
+        justify-content: center;
+        width: 80%;
+        max-width: 1000px;
     }
     
 }
