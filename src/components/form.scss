@@ -41,6 +41,8 @@
     margin-left: 30px;
     margin-right: 30px;
     box-sizing: border-box;
+    opacity: 0.5;
+    text-shadow: 2px 5px 7px #422F4F;
     transition: 500ms;
 }
 
@@ -110,6 +112,8 @@
     border-radius: 5px;
     font-size: 80%;
     color: white;
+    opacity: 0.5;
+    text-shadow: 2px 5px 7px #422F4F;
     font-weight: bold;
     cursor: pointer;
     border: 1px solid white;
