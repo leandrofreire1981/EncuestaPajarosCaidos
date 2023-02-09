@@ -34,14 +34,14 @@
     background-color:  rgb(121, 169, 233);
     border-radius: 5px;
     font-size: 15px;
-    color: white;
+    color:black;
     font-weight: bold;
     cursor: pointer;
     border: 1px solid white;
     margin-left: 30px;
     margin-right: 30px;
     box-sizing: border-box;
-    opacity: 0.5;
+    opacity: 0.7;
     text-shadow: 2px 5px 7px #422F4F;
     transition: 500ms;
 }
@@ -111,8 +111,8 @@
     background-color: rgb(121, 169, 233);
     border-radius: 5px;
     font-size: 80%;
-    color: white;
-    opacity: 0.5;
+    color: black;
+    opacity: 0.7;
     text-shadow: 2px 5px 7px #422F4F;
     font-weight: bold;
     cursor: pointer;
@@ -122,7 +122,9 @@
     box-sizing: border-box;
 }
 
-
+.errorRef{
+    color: red;
+}
 
 @media screen and (min-width: 800px) {
     .form{
