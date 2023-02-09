@@ -2,7 +2,7 @@
 	"items": [
 		{
 			"type": "text",
-			"label": "Nombre completo",
+			"label": "Nombre",
 			"name": "full_name",
 			"required": true,
 			"bigText": false
@@ -15,16 +15,23 @@
 			"bigText": false
 		},
         {
-			"type": "tel",
-			"label": "Celular",
-			"name": "celular",
+			"type": "text",
+			"label": "Ciudad",
+			"name": "ciudad",
 			"required": true,
 			"bigText": false
 		},
 		{
 			"type": "url",
-			"label": "Usuario de instagram o facebook",
+			"label": "Usuario de instagram o facebook (opcional)",
 			"name": "user",
+			"required": false,
+			"bigText": false
+		},
+		{
+			"type": "text",
+			"label": "Edad",
+			"name": "edad",
 			"required": true,
 			"bigText": false
 		},
@@ -37,65 +44,71 @@
 		},
         {
 			"type": "text",
-			"label": "¿Cómo fue tu experiencia?",
+			"label": "¿Cómo fue tu experiencia con el rescate?",
 			"name": "exp",
-			"required": true,
-			"bigText": false
-		},
-		{
-			"type": "checkbox",
-			"label": "¿Sobrevivió el ave?",
-			"options": [{"label": "si", "name": "sobrevivio"}, {"label": "no", "name": "sobrevivio"}],
-			"name": "sobrevivio",
 			"required": true,
 			"bigText": false
 		},
         {
 			"type": "checkbox",
-			"label": "¿La información fue clara?",
+			"label": "¿La información que te brindamos fue clara?",
 			"options": [{"label": "si", "name": "info"}, {"label": "no", "name": "info"}],
 			"name": "info",
 			"required": true,
 			"bigText": false
 		},
+		{
+			"type": "text",
+			"label": "¿Qué fue lo que te generó confusión?",
+			"name": "infoConf",
+			"required": true,
+			"bigText": true
+		},
         {
 			"type": "checkbox",
-			"label": "¿La orientación resolvió tu consulta principal?",
+			"label": "¿La información que te brindamos fue precisa respecto a tu consulta?",
 			"options": [{"label": "si", "name": "orientacion"}, {"label": "no", "name": "orientacion"} ],
-			"name": "orientacion",
+			"name": "infoPrecisa",
 			"required": true,
 			"bigText": false
 		},
-        {
-			"type": "checkbox",
-			"label": "¿Cómo fue la atención del voluntariado a tus dudas?",
-			"options": [{"label": "Excelente", "name": "atencion"}, {"label": "Buena", "name": "atencion"}, {"label": "Mala", "name": "atencion"} ],
-			"name": "atencion",
+		{
+			"type": "text",
+			"label": "¿Qué faltó saber?",
+			"name": "infoFaltante",
 			"required": true,
-			"bigText": false
+			"bigText": true
 		},
         {
 			"type": "checkbox",
-			"label": "Dictamos un curso de primeros auxilios en aves. ¿Te interesaría participar?",
-			"options": [{"label": "si", "name": "auxilios"}, {"label": "no", "name": "auxilios"}, {"label": "Tal vez", "name": "auxilios"} ],
+			"label": "Te gustaría participar de un curso de primeros auxilios en aves?",
+			"options": [{"label": "si", "name": "auxilios"}, {"label": "no", "name": "auxilios"}],
 			"name": "auxilios",
 			"required": true,
 			"bigText": false
 		},
         {
 			"type": "checkbox",
-			"label": "Dictamos un curso de voluntariado online y de tránsito de nuestra ONG. ¿Te interesaría participar?",
-			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}, {"label": "Tal vez", "name": "volunt"} ],
+			"label": "¿Te gustaría ser parte del voluntariado online o de tránsito de nuestra ONG?",
+			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}],
 			"name": "volunt",
 			"required": true,
 			"bigText": false
 		},
         {
 			"type": "text",
-			"label": "Espacio para sugerencias",
+			"label": "¿Qué sugerencias dejarías para que podamos incorporar?",
 			"name": "sugerencias",
 			"required": false,
 			"bigText": true
+		},
+		{
+			"type": "checkbox",
+			"label": "¿Tenes posibilidad de sumarte para aplicar a lo que propones?",
+			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}],
+			"name": "sumarte",
+			"required": true,
+			"bigText": false
 		},
 		{
 			"type": "submit",

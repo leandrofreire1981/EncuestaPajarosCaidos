@@ -5,6 +5,8 @@ import saveDv from '../controllers/saveDb'
 import db from '../db.json'
 import { getData } from '../redux/actions'
 import './form.scss'
+import img from '../img/img1.jpg'
+
 
 
 export default function Form() {
@@ -80,7 +82,9 @@ export default function Form() {
 
   return (
     <form onSubmit={handleOnSubmit} className="form" >
-        <h2>Encuesta</h2>
+        <h2 className='title'>Encuesta</h2>
+        <h2 className='title'>Pajaroscaidos.org</h2>
+        {/* <img src={img} alt='not found' className='img'/> */}
         {db.items.map((r, i) => {
             if(r.type === 'submit')
                 return (

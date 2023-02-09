@@ -1,18 +1,28 @@
+.title {
+    color:rgb(38, 48, 61)
+}
+
 .form{
-    background-color: #434a57;
-    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-    box-shadow: 5px 5px 15px 5px #000000;
+    //background-color: #434a57;
+    //-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    //box-shadow: 5px 5px 15px 5px #000000;
     padding: 20px;
     align-self: center;
     justify-content: center;
     width: 80%;
     max-width: 1000px;
+}
+
+.img {
+     background-image: url("../img/img1.jpg");
  }
 
  .label{
     padding-left: 2%;
     padding-right: 2%;
     box-sizing: border-box;
+    color:rgb(38, 48, 61);
+    font-weight: bold;
  }
 
 .input {
@@ -40,7 +50,7 @@
     background-color: rgb(38, 48, 61);
     border-radius: 5px;
     font-size: 15px;
-    color: white;
+    color:rgb(38, 48, 61);
     font-weight: bold;
     cursor: pointer;
     border: 1px solid white;
@@ -83,6 +93,8 @@
 
 .labelCheckbox{
     font-size: 20px;
+    color:rgb(38, 48, 61);
+    font-weight: bolder;
 }
 
 .textArea{
@@ -101,9 +113,7 @@
     box-sizing: border-box;
 }
 
-.option{
 
-}
 
 @media screen and (min-width: 800px) {
     .form{

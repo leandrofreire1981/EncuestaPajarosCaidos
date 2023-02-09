@@ -1,6 +1,10 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  background-image: url("./img/img1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
