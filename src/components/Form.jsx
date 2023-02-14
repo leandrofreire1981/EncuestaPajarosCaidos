@@ -21,17 +21,15 @@ export default function Form() {
     function handleOnSubmit(e){
         e.preventDefault()
         for (let i = 0; i < db.items.length - 1; i++) {
-/*              if(db.items[i].type !== 'submit' && input && input[db.items[i].name]){
-                console.log('cooorrecto', input[db.items[i].name])
-                continue
-            }
-            if(db.items[i].type !== 'submit' && input && input[db.items[i].name] === 'on')
-                console.log('cooorrecto', db.items[i].name)  */
-                console.log('form: ', db.items[i].label, input[db.items[i].name], db.items[i].name)
-             if(db.items[i].required && !input[db.items[i].name]){
+            console.log('form: ', db.items[i].label, input[db.items[i].name], db.items[i].name)
+            if(db.items[i].required && !input[db.items[i].name]){
                 errorRef.current.innerHTML = `Faltan ingresar ${db.items[i].label}`
                 return
-            } 
+            }
+            if (db.items[i].type === 'checkbox' && input[db.items[i].name] === 'si' && db.items[i + 1].name === `${db.items[i].name}Res`){
+                db.items[i + 1].required = true;
+                db.items[i + 1].label = db.items[i + 1].label + ' (requerido)'
+            }
         }  
         console.log('enviando a Database', input) 
         //saveDv(input) 
@@ -98,13 +96,13 @@ export default function Form() {
             else
             if(r.type === 'select')
                 return(
-                    <div key = {i + 'a'}>
+                    <div key = {i}>
                         <label className='label'>{r.label}</label>
                         <select onChange={handleOnSelect} name={r.name} className='select' >
                             <option value={r.label}>{r.label}</option>
                             {
                                 r.options.map((r2, i) => 
-                                    <option key={i} value={r2.value} className='option'>{r2.label}</option>
+                                    <option key={i + 'zx'} value={r2.value} className='option'>{r2.label}</option>
                                 )
                             }
                         </select>
@@ -112,15 +110,15 @@ export default function Form() {
                 )
             if(r.type === 'checkbox')
                 return(
-                    <div key={i + 'b'}>
+                    <div key={i}>
                         <label className='label'>{r.label} </label>
                         <br></br>
                         {
                             r.options?.map((o, i) => (
-                            <>
-                                <label ref={checkRef} className='labelCheckbox'>{o.label}</label>
+                            <span key={i}>
+                                <label  ref={checkRef} className='labelCheckbox'>{o.label}</label>
                                 <input type={r.type} id={i} name={o.name} onChange={handleOnChange} value={o.label}  style={r.bigText? {height: 100, width:400} : {}} className='checkbox' />
-                            </>
+                            </span>
                             )) 
                         }
                     </div>   
@@ -128,7 +126,7 @@ export default function Form() {
             else
                 if(r.bigText)
                         return (
-                            <div key={i + 'c'}>
+                            <div key={i}>
                         <label className='label'>{r.label} </label>
                         <br></br>
                         <textarea name={r.name} onChange={handleOnChange} value={input && input[r.name]} className='textArea' />
@@ -136,7 +134,7 @@ export default function Form() {
                     </div>
                         )
             return (
-                <div key={i + 'c'}>
+                <div key={i}>
                     <label className='label'>{r.label} </label>
                     <br></br>
                     <input type={r.type} name={r.name} onChange={handleOnChange} value={input && input[r.name]}  style={r.bigText? {height: 100} : {}} className='input' />
