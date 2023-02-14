@@ -2,21 +2,21 @@
 	"items": [
 		{
 			"type": "text",
-			"label": "Nombre",
-			"name": "full_name",
+			"label": "Nombre (requerido)",
+			"name": "name",
 			"required": true,
 			"bigText": false
 		},
 		{
 			"type": "email",
-			"label": "Correo electrónico",
+			"label": "Correo electrónico (requerido)",
 			"name": "email",
 			"required": true,
 			"bigText": false
 		},
         {
 			"type": "text",
-			"label": "Ciudad",
+			"label": "Ciudad (requerido)",
 			"name": "ciudad",
 			"required": true,
 			"bigText": false
@@ -30,44 +30,44 @@
 		},
 		{
 			"type": "text",
-			"label": "Edad",
+			"label": "Edad (opcional)",
 			"name": "edad",
-			"required": true,
+			"required": false,
 			"bigText": false
 		},
         {
 			"type": "text",
-			"label": "¿Qué ave rescataste?",
+			"label": "¿Qué ave rescataste? (opcional)",
 			"name": "rescate",
-			"required": true,
+			"required": false,
 			"bigText": false
 		},
         {
 			"type": "text",
-			"label": "¿Cómo fue tu experiencia con el rescate?",
+			"label": "¿Cómo fue tu experiencia con el rescate? (opcional)",
 			"name": "exp",
-			"required": true,
+			"required": false,
 			"bigText": false
 		},
         {
 			"type": "checkbox",
-			"label": "¿La información que te brindamos fue clara?",
-			"options": [{"label": "si", "name": "info"}, {"label": "no", "name": "info"}],
-			"name": "info",
+			"label": "¿La información que te brindamos fue clara? (requerido)",
+			"options": [{"label": "si", "name": "infoClara"}, {"label": "no", "name": "infoClara"}],
+			"name": "infoClara",
 			"required": true,
 			"bigText": false
 		},
 		{
 			"type": "text",
 			"label": "¿Qué fue lo que te generó confusión?",
-			"name": "infoConf",
-			"required": true,
+			"name": "infoClaraRes",
+			"required": false,
 			"bigText": true
 		},
         {
 			"type": "checkbox",
-			"label": "¿La información que te brindamos fue precisa respecto a tu consulta?",
-			"options": [{"label": "si", "name": "orientacion"}, {"label": "no", "name": "orientacion"} ],
+			"label": "¿La información que te brindamos fue precisa respecto a tu consulta? (requerido)",
+			"options": [{"label": "si", "name": "infoPrecisa"}, {"label": "no", "name": "infoPrecisa"} ],
 			"name": "infoPrecisa",
 			"required": true,
 			"bigText": false
@@ -75,13 +75,13 @@
 		{
 			"type": "text",
 			"label": "¿Qué faltó saber?",
-			"name": "infoFaltante",
-			"required": true,
+			"name": "infoPrecisaRes",
+			"required": false,
 			"bigText": true
 		},
         {
 			"type": "checkbox",
-			"label": "Te gustaría participar de un curso de primeros auxilios en aves?",
+			"label": "Te gustaría participar de un curso de primeros auxilios en aves? (requerido)",
 			"options": [{"label": "si", "name": "auxilios"}, {"label": "no", "name": "auxilios"}],
 			"name": "auxilios",
 			"required": true,
@@ -89,7 +89,7 @@
 		},
         {
 			"type": "checkbox",
-			"label": "¿Te gustaría ser parte del voluntariado online o de tránsito de nuestra ONG?",
+			"label": "¿Te gustaría ser parte del voluntariado online o de tránsito de nuestra ONG? (requerido)",
 			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}],
 			"name": "volunt",
 			"required": true,
@@ -97,7 +97,7 @@
 		},
         {
 			"type": "text",
-			"label": "¿Qué sugerencias dejarías para que podamos incorporar?",
+			"label": "¿Qué sugerencias dejarías para que podamos incorporar? (opcional)",
 			"name": "sugerencias",
 			"required": false,
 			"bigText": true
@@ -105,9 +105,9 @@
 		{
 			"type": "checkbox",
 			"label": "¿Tenes posibilidad de sumarte para aplicar a lo que propones?",
-			"options": [{"label": "si", "name": "volunt"}, {"label": "no", "name": "volunt"}],
-			"name": "sumarte",
-			"required": true,
+			"options": [{"label": "si", "name": "sugerenciasRes"}, {"label": "no", "name": "sugerenciasRes"}],
+			"name": "sugerenciasRes",
+			"required": false,
 			"bigText": false
 		},
 		{
