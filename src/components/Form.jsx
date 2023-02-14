@@ -32,10 +32,10 @@ export default function Form() {
             }
         }  
         console.log('enviando a Database', input) 
-        //saveDv(input) 
+        saveDv(input) 
 
        //dispatch(getData())
-        //navigate("/showdb")  
+        navigate("/showdb")  
  
     }
 
