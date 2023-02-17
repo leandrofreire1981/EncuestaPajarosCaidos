@@ -81,7 +81,7 @@
 		},
         {
 			"type": "checkbox",
-			"label": "Te gustaría participar de un curso de primeros auxilios en aves? (requerido)",
+			"label": "¿Te gustaría participar de un curso de primeros auxilios en aves? (requerido)",
 			"options": [{"label": "si", "name": "auxilios"}, {"label": "no", "name": "auxilios"}],
 			"name": "auxilios",
 			"required": true,
