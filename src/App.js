@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import { ShowDb } from './components/ShowDb';
 import { Thanks } from './components/Thanks';
+import img from './img/imagen.jpeg'
 
 
 function App() {
